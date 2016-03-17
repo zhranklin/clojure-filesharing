@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Hello, {{ name }}
+{% endblock %}
+
+{% block body %}
+  <div class="row">
+    <div class="span12">
+      <h3>Welcome, {{ name }}</h3>
+      <p>Edit <a href="/user/{{ id }}">profile</a></p>
+      <h3>Files</h3>
+      {% for f in files %}
+      <p><a href="/files/{{ f.id }}">{{ f.filename }}</a></p>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
